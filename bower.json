@@ -1,0 +1,20 @@
+{
+  "name": "prisonarchitect",
+  "version": "0.0.0",
+  "authors": [
+    "Joe Carter <theupperquartile@gmail.com>"
+  ],
+  "main": "src/main.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "pixi.js": "~3.0.7"
+  }
+}

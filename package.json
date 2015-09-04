@@ -1,0 +1,36 @@
+{
+  "name": "prisonarchitect",
+  "version": "0.0.0",
+  "description": "ERROR: No README data found!",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "babelify": "^6.3.0",
+    "bower": "^1.5.2",
+    "browserify-bower": "^0.6.0",
+    "grunt": "^0.4.5",
+    "grunt-bower": "^0.20.0",
+    "grunt-bower-requirejs": "^2.0.0",
+    "grunt-browserify": "^4.0.0"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "babel": "^5.8.23",
+    "babelify": "^6.3.0",
+    "bower": "^1.5.2",
+    "browserify-bower": "^0.6.0",
+    "grunt": "^0.4.5",
+    "grunt-babel": "^5.0.1",
+    "grunt-bower": "^0.20.0",
+    "grunt-bower-requirejs": "^2.0.0",
+    "grunt-browserify": "^4.0.0",
+    "grunt-contrib-copy": "^0.8.1",
+    "grunt-contrib-requirejs": "^0.4.4",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-requirejs": "^0.4.2",
+    "grunt-shell": "^1.1.2"
+  }
+}
