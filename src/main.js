@@ -14,23 +14,51 @@ $(function() {
     // create the root of the scene graph
     var stage = new PIXI.Container();
 
-    var sprite;
-    spritebank.fromFile("interface", function(bank) {
+    var sprites = [];
+    spritebank.fromFile("objects", ["objects", "people"], function(bank) {
         function randomSprite() {
-            var sprites = bank.sprites;
-            var rand = Math.floor(Math.random()*sprites.length);
+            //var sprites = bank.sprites;
+            var rand = Math.floor(Math.random()*bank.sprites.length);
 
-            stage.removeChild(sprite);
+            for (let s in sprites) {
+                stage.removeChild(sprites[s]);
+            }
+            sprites = [];
 
-            sprite = new PIXI.Sprite(sprites[rand].texture);
+            //let spriteinfo = bank.sprites[rand];
+            let spriteinfo = bank.getByName("Bed");
 
-            sprite.position.x = 200;
-            sprite.position.y = 150;
+            console.log(spriteinfo.Name);
 
-            stage.addChild(sprite);
+            let posx = 200;
+            let posy = 150;
+
+
+
+            for(let i = 0; i < spriteinfo.num; i++) {
+                let sprite = spriteinfo.sprite();
+                //console.log(sprite);
+                sprite.setActive(i);
+
+                sprite.position.x = posx;
+                sprite.position.y = posy;
+
+                posx += 100;
+                posy += 100;
+
+                stage.addChild(sprite);
+
+                sprites.push(sprite);
+            }
+
+
+
+
+
+            //sprite.rotation = -(Math.PI/2)*3;
         }
         randomSprite();
-        setInterval(randomSprite, 1000);
+        //setInterval(randomSprite, 1000);
     });
 
 
@@ -60,6 +88,13 @@ $(function() {
 
         // just for fun, let's rotate mr rabbit a little
         //bunny.rotation += 0.1;
+
+        //sprite._rot += 1;
+
+        for (let s in sprites) {
+            let sprite = sprites[s];
+            sprite.rotation += 0.1;
+        }
 
         // render the container
         renderer.render(stage);
